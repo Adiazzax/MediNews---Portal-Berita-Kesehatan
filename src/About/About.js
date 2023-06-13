@@ -5,89 +5,59 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Dimensions,
 } from 'react-native';
 import React from 'react';
+import Navigation from "../Nav/Navigation";
 
 const About = () => {
   return (
-    <View style={styles.aboutContainer}>
-      <Text style={styles.mainHeader}> Vinod bahadur thapa </Text>
-      <Text style={styles.paraStyle}> I am a full stack developer 😀 </Text>
-
-      <View>
-        <Image
-          style={styles.imgStyle}
-          source={{
-            uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-          }}
-        />
-      </View>
-
-      <View style={styles.aboutLayout}>
-        <Text style={styles.aboutSubHeader}> About me </Text>
-        <Text style={[styles.paraStyle, styles.aboutPara]}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer
-          adipiscing elit. Aenean commodo ligula eget dolor.
-        </Text>
-      </View>
-
-      <Text style={styles.mainHeader}> Follow me on Social Network </Text>
-
-      <View style={styles.menuContainer}>
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() =>
-            Linking.openURL('https://www.instagram.com/thapatechnical/')
-          }>
+    <View style={styles.container}>
+      <View style={styles.content}>
+        <View style={styles.logoContainer}>
           <Image
-            style={styles.iconStyle}
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/512/2111/2111463.png',
-            }}
+            style={styles.logo}
+            source={require('../../Aset/logo.png')}
+            resizeMode="contain"
           />
-        </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() =>
-            Linking.openURL(
-              'https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA',
-            )
-          }>
-          <Image
-            style={styles.iconStyle}
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/512/187/187210.png',
-            }}
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => Linking.openURL('https://discord.gg/AN8ThRBXtY')}>
-          <Image
-            style={styles.iconStyle}
-            source={{
-              uri: 'https://cdn-icons-png.flaticon.com/512/906/906361.png',
-            }}
-          />
-        </TouchableOpacity>
+        <View style={styles.aboutLayout}>
+          <Text style={styles.aboutSubHeader}>TENTANG KAMI</Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            Kami menyediakan informasi terkini dan mendalam tentang kesehatan
+            dengan tujuan mempromosikan kesadaran akan gaya hidup sehat. Kami
+            adalah sumber terpercaya bagi semua yang mencari informasi kesehatan.
+          </Text>
+        </View>
+        
       </View>
+      
+      <Navigation />
     </View>
   );
 };
 
+var { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
-  aboutContainer: {
-    display: 'flex',
+  container: {
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'flex-end',
   },
-
-  imgStyle: {
-    width: 150,
+  content: {
+    flex: 1,
+    width: '100%',
+    paddingBottom: 80, // Menambahkan padding bawah agar navbar tidak menutupi konten
+  },
+  logoContainer: {
+    flex: 1,
+    justifyContent: 'center', // Mengatur logo berada di tengah secara vertikal
+    alignItems: 'center', // Mengatur logo berada di tengah secara horizontal
+  },
+  logo: {
+    width: width * 0.3,
     height: 150,
-    borderRadius: 100,
   },
   mainHeader: {
     fontSize: 18,
@@ -97,6 +67,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 10,
     fontFamily: 'JosefinSans_700Bold',
+    textAlign: 'center',
   },
   paraStyle: {
     fontSize: 18,
@@ -104,7 +75,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   aboutLayout: {
-    backgroundColor: '#4c5dab',
+    backgroundColor: '#68B984',
     paddingHorizontal: 30,
     marginVertical: 30,
   },
@@ -119,13 +90,16 @@ const styles = StyleSheet.create({
   },
   aboutPara: {
     color: '#fff',
+    textAlign: 'justify',
   },
   menuContainer: {
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-
+  buttonStyle: {
+    alignItems: 'center',
+  },
   iconStyle: {
     width: '100%',
     height: 50,
