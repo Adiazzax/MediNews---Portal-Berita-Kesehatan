@@ -228,10 +228,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#68B984',
-    paddingVertical: 6,
+    borderColor: '#FFC200',
+    paddingVertical: 0,
     paddingHorizontal: 12,
-    borderRadius: 20,
+    borderRadius: 50,
     marginBottom: 16,
   },
   searchIcon: {
@@ -252,6 +252,7 @@ const styles = StyleSheet.create({
   categoryTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#000',
   },
   categoryIconContainer: {
     marginLeft: 8,
@@ -267,13 +268,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#000',
   },
   newsCard: {
-    backgroundColor: '#F5F5F5',
-    borderRadius: 8,
+backgroundColor: '#fff',
+    borderRadius: 28,
     padding: 29,
     width: 250,
-    marginBottom: 6, // Atur lebar berita utama
+    marginBottom: 6,
+    borderWidth: 1,
+    borderColor: '#f5f5f5', 
   },
   newsThumbnail: {
     width: '100%',
@@ -285,20 +289,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#000',
   },
   categoryText: {
     fontSize: 12,
     marginBottom: 4,
+    color: '#000',
   },
   releaseDateText: {
     fontSize: 12,
     color: '#999',
   },
   readMoreButton: {
-    backgroundColor: '#68B984',
+    backgroundColor: '#FFC200',
     paddingHorizontal: 12,
     paddingVertical: 8,
-    borderRadius: 4,
+    borderRadius: 50,
     marginTop: 8,
     alignSelf: 'flex-start',
   },
@@ -312,11 +318,7 @@ const styles = StyleSheet.create({
   newsCardCompact: {
     flexDirection: 'row',
     alignItems: 'center',
-    // backgroundColor: '#F5F5F5',
-    // borderRadius: 8,
-    // marginBottom: 16,
-    // padding: 16,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#fff',
     borderRadius: 8,
     padding: 16,
     width: 355,
@@ -335,14 +337,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     marginBottom: 4,
+    color: '#000',
   },
-  // readMoreButtonCompact: {
-  //   backgroundColor: '#FFC200',
-  //   paddingHorizontal: 12,
-  //   paddingVertical: 8,
-  //   borderRadius: 4,
-  //   alignSelf: 'flex-start',
-  // },
 });
 
 export default Home;

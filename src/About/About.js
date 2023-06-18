@@ -85,16 +85,6 @@ const styles = StyleSheet.create({
   salamSehat: {
     color: '#68B984',
   },
-  socialIconsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
-  },
-  socialIcon: {
-    width: 50,
-    height: 50,
-    marginHorizontal: 10,
-  },
 });
 
 export default About;

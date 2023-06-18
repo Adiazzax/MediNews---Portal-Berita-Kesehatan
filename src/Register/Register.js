@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 50,
     marginBottom: 20,
   },
   buttonText: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     color: '#555',
   },
   signInTextYellow: {
-    color: 'red',
+    color: '#FFC200',
   },
 });
 
