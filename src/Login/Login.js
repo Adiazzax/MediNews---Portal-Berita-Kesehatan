@@ -30,14 +30,6 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}>
-        <Image
-          source={require('../../Aset/kmbl.png')}
-          style={styles.backIcon}
-        />
-      </TouchableOpacity> */}
 
       <View style={styles.formContainer}>
         <Text style={styles.heading}>Selamat Datang</Text>

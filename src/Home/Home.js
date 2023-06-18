@@ -11,7 +11,7 @@ const Home = () => {
       id: 1,
       title: '8 Macam Efek Samping Obat Antibiotik yang Perlu Diketahui',
       category: 'Info Kesehatan',
-      releaseDate: '5 hari yang lalu',
+      releaseDate: '5 jam yang lalu',
       thumbnail: require('../../Aset/Berita1.jpg'),
     },
     {
@@ -35,6 +35,35 @@ const Home = () => {
       releaseDate: '4 jam yang lalu',
       thumbnail: require('../../Aset/Berita4.jpg'),
     },
+    {
+      id: 5,
+      title: '4 Cara Mengobati Thalasemia, Ada Transfusi Darah dan Obat',
+      category: 'Terapi Pengobatan',
+      releaseDate: '2 jam yang lalu',
+      thumbnail: require('../../Aset/Berita11.jpg'),
+    },
+    {
+      id: 6,
+      title: '5 Obat Herbal Ini Ampuh Turunkan Kadar Gula Darah',
+      category: 'Gaya Hidup',
+      releaseDate: '5 jam yang lalu',
+      thumbnail: require('../../Aset/Berita22.jpeg'),
+    },
+    {
+      id: 7,
+      title: 'Hati-hati, Makanan Ini Seharusnya Tidak Dimakan Bersama Telur',
+      category: 'Gaya Hidup',
+      releaseDate: '1 menit yang lalu',
+      thumbnail: require('../../Aset/Berita33.jpeg'),
+    },
+    {
+      id: 8,
+      title: 'Satgas COVID-19 Rilis Prokes Terbaru, Masih Wajib Masker di Angkutan Umum?',
+      category: 'Info Kesehatan',
+      releaseDate: '2 jam yang lalu',
+      thumbnail: require('../../Aset/Berita44.jpeg'),
+    },
+    
     // Tambahkan berita lainnya di sini
   ];
   const data2 = [
@@ -66,22 +95,50 @@ const Home = () => {
       releaseDate: '2 hari yang lalu',
       thumbnail: require('../../Aset/Berita44.jpeg'),
     },
+    {
+      id: 5,
+      title: '8 Macam Efek Samping Obat Antibiotik yang Perlu Diketahui',
+      category: 'Info Kesehatan',
+      releaseDate: '5 hari yang lalu',
+      thumbnail: require('../../Aset/Berita1.jpg'),
+    },
+    {
+      id: 6,
+      title: 'Jemaah Haji Makin Dipermudah Mendapatkan Obat dengan Sistem Pendistribusian Baru',
+      category: 'Info Kesehatan',
+      releaseDate: '5 jam yang lalu',
+      thumbnail: require('../../Aset/Berita2.jpg'),
+    },
+    {
+      id: 7,
+      title: 'Tahun 2023, Seluruh Daerah Ditargetkan Miliki Kawasan Tanpa Rokok',
+      category: 'Info Kesehatan',
+      releaseDate: '14 menit yang lalu',
+      thumbnail: require('../../Aset/Berita3.jpeg'),
+    },
+    {
+      id: 8,
+      title: 'Waspadai Dua Penyakit Yang Sering Menyerang Jemaah Haji Lansia di Tanah Suci',
+  category: 'Info Kesehatan',
+      releaseDate: '4 jam yang lalu',
+      thumbnail: require('../../Aset/Berita4.jpg'),
+    },
     // Tambahkan berita lainnya di sini
   ];
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.newsCard}>
-      <Image source={item.thumbnail} style={styles.newsThumbnail} />
-      <Text style={styles.newsTitle}>{item.title}</Text>
-      <Text style={styles.categoryText}>{item.category}</Text>
-      <Text style={styles.releaseDateText}>{item.releaseDate}</Text>
-      <TouchableOpacity style={styles.readMoreButton}>
-        <Text style={styles.readMoreButtonText}>Detail Selengkapnya</Text>
-      </TouchableOpacity>
+  const renderCompact1Item = ({ item }) => (
+    <TouchableOpacity style={styles.newsCardCompact}>
+      <Image source={item.thumbnail} style={styles.newsThumbnailCompact} />
+      <View style={styles.newsInfoContainer}>
+        <Text style={styles.newsTitleCompact} numberOfLines={2}>{item.title}</Text>
+        <Text style={styles.categoryText}>{item.category}</Text>
+        <Text style={styles.releaseDateText}>{item.releaseDate}</Text>
+      </View>
     </TouchableOpacity>
+    
   );
 
-  const renderCompactItem = ({ item }) => (
+  const renderCompact2Item = ({ item }) => (
     <TouchableOpacity style={styles.newsCardCompact}>
       <Image source={item.thumbnail} style={styles.newsThumbnailCompact} />
       <View style={styles.newsInfoContainer}>
@@ -134,7 +191,7 @@ const Home = () => {
           <FlatList
             data={data2}
             keyExtractor={item => item.id.toString()}
-            renderItem={renderItem}
+            renderItem={renderCompact2Item}
             contentContainerStyle={styles.flatListContent}
           />
           
@@ -142,16 +199,12 @@ const Home = () => {
           <FlatList
             data={data2.slice(0, 1)}
             keyExtractor={item => item.id.toString()}
-            renderItem={renderCompactItem}
+            renderItem={renderCompact1Item}
             horizontal
             showsHorizontalScrollIndicator={false}
           />
+          
         )}
-        {/* {showAllNews && (
-          <TouchableOpacity style={styles.readMoreButtonCompact} onPress={handleToggleNews}>
-            <Text style={styles.readMoreButtonText}>Tampilkan Lebih Sedikit</Text>
-          </TouchableOpacity>
-        )} */}
       </View>
     </ScrollView>
 
@@ -168,6 +221,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingTop: 10,
+    marginBottom: 45,
   },
   searchBar: {
     flexDirection: 'row',

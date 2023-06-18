@@ -14,23 +14,29 @@ const About = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.logoContainer}>
-          <Image
-            style={styles.logo}
-            source={require('../../Aset/logo.png')}
-            resizeMode="contain"
-          />
-        </View>
-
-        <View style={styles.aboutLayout}>
-          <Text style={styles.aboutSubHeader}>TENTANG KAMI</Text>
-          <Text style={[styles.paraStyle, styles.aboutPara]}>
-            Kami menyediakan informasi terkini dan mendalam tentang kesehatan
-            dengan tujuan mempromosikan kesadaran akan gaya hidup sehat. Kami
-            adalah sumber terpercaya bagi semua yang mencari informasi kesehatan.
-          </Text>
-        </View>
+        <Text style={styles.subTitle}>MediNews</Text>
         
+        <View style={styles.aboutLayout}>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            <Text style={styles.medInews}></Text>MediNews berdedikasi untuk menyajikan informasi kesehatan terbaru dan terpercaya kepada Anda. Dalam dunia yang terus berkembang ini, kami menyadari pentingnya memiliki sumber berita yang dapat dipercaya untuk menjaga kesehatan dan kesejahteraan kita.
+          </Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            Visi kami adalah memberikan akses mudah dan cepat kepada semua orang untuk informasi kesehatan yang akurat dan terkini. Kami berkomitmen untuk memberikan berita yang terpercaya dan berbasis bukti ilmiah sehingga Anda dapat membuat keputusan yang tepat untuk hidup sehat.
+          </Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            MediNews menyajikan berita dalam berbagai kategori, termasuk pencegahan, pengobatan, gaya hidup sehat, penelitian medis terbaru, dan banyak lagi. Kami juga menghadirkan wawancara dengan ahli kesehatan, artikel informatif, dan tips praktis untuk membantu Anda menjaga kesehatan Anda.
+          </Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            Kami sangat menghargai umpan balik dari pengguna kami. Jika Anda memiliki pertanyaan, saran, atau ingin berbagi pengalaman Anda, jangan ragu untuk menghubungi kami. Kami berusaha untuk terus meningkatkan layanan kami dan memberikan konten yang relevan dan bermanfaat bagi Anda.
+          </Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            Terima kasih telah menggunakan MediNews. Kami berharap aplikasi ini memberikan manfaat dan inspirasi bagi Anda dalam perjalanan hidup sehat Anda.
+          </Text>
+          <Text style={[styles.paraStyle, styles.aboutPara]}>
+            <Text style={styles.salamSehat}>Salam Sehat, <Text style={[styles.sumputkeun]}>telah menggunakan MediNews. Kami </Text>MediNews!</Text> 
+          </Text>
+          
+        </View>
       </View>
       
       <Navigation />
@@ -44,66 +50,50 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
+    backgroundColor: "white",
+  },
+  sumputkeun: {
+    color: 'white',
   },
   content: {
     flex: 1,
     width: '100%',
     paddingBottom: 80, // Menambahkan padding bawah agar navbar tidak menutupi konten
   },
-  logoContainer: {
-    flex: 1,
-    justifyContent: 'center', // Mengatur logo berada di tengah secara vertikal
-    alignItems: 'center', // Mengatur logo berada di tengah secara horizontal
-  },
-  logo: {
-    width: width * 0.3,
-    height: 150,
-  },
-  mainHeader: {
+  subTitle: {
     fontSize: 18,
-    color: '#344055',
-    textTransform: 'uppercase',
-    fontWeight: '500',
-    marginTop: 50,
-    marginBottom: 10,
-    fontFamily: 'JosefinSans_700Bold',
-    textAlign: 'center',
-  },
-  paraStyle: {
-    fontSize: 18,
-    color: '#7d7d7d',
-    paddingBottom: 30,
+    fontWeight: 'bold',
+    textAlign: 'left',
+    marginTop: 20,
+    marginBottom: -17,
+    color: 'black',
+    marginLeft: 12,
   },
   aboutLayout: {
-    backgroundColor: '#68B984',
     paddingHorizontal: 30,
     marginVertical: 30,
   },
-  aboutSubHeader: {
-    fontSize: 18,
-    color: '#fff',
-    textTransform: 'uppercase',
-    fontWeight: '500',
-    marginVertical: 15,
-    fontFamily: 'JosefinSans_700Bold',
-    alignSelf: 'center',
-  },
   aboutPara: {
-    color: '#fff',
+    color: '#68B984',
     textAlign: 'justify',
+    marginBottom: 10,
   },
-  menuContainer: {
-    width: '100%',
+  medInews: {
+    color: 'black',
+    textAlign: 'left',
+  },
+  salamSehat: {
+    color: '#68B984',
+  },
+  socialIconsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
+    marginTop: 20,
   },
-  buttonStyle: {
-    alignItems: 'center',
-  },
-  iconStyle: {
-    width: '100%',
+  socialIcon: {
+    width: 50,
     height: 50,
-    aspectRatio: 1,
+    marginHorizontal: 10,
   },
 });
 

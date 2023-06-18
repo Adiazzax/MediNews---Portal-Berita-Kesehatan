@@ -15,11 +15,11 @@ const NavigationBar = () => {
 
   return (
     <View style={styles.navigationBar}>
-      <TouchableOpacity onPress={AboutButton}>
-        <Image style={styles.iconStyle} source={require('../../Aset/orang.png')} />
-      </TouchableOpacity>
       <TouchableOpacity onPress={HomeButton}>
         <Image style={styles.iconStyle} source={require('../../Aset/RumahIcon.png')} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={AboutButton}>
+        <Image style={styles.iconStyle} source={require('../../Aset/orang.png')} />
       </TouchableOpacity>
     </View>
   );
